@@ -9,7 +9,7 @@ provider "alicloud" {
 
 }
 
-data "alicloud_instance_types" "ecs.t6-c2m1.large" {
+data "alicloud_instance_types" "ecs.n1.small" {
   cpu_core_count = 2
   memory_size    = 1
 }

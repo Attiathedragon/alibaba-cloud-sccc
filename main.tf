@@ -10,7 +10,7 @@ provider "alicloud" {
 }
 
 data "alicloud_images" "default" {
-  name_regex  = "^ubuntu"
+  name_regex  = "^ubuntu18^"
   most_recent = true
   owners      = "system"
 }

@@ -1,8 +1,8 @@
 # Configure the Alicloud Provider
 provider "alicloud" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
-  region     = "${var.region}"
+  region = "ALICLOUD_REGION"
+  access_key = "ALICLOUD_ACCESS_KEY"
+  secret_key = "ALICLOUD_SECRET_KEY"
 }
 
 data "alicloud_instance_types" "c2g4" {
@@ -34,3 +34,6 @@ resource "alicloud_security_group" "default" {
   description = "default"
   vpc_id      = "vpc-abc12345"
   }
+
+
+

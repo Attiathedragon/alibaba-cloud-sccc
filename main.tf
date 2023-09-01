@@ -23,8 +23,7 @@ data "alicloud_images" "default" {
 resource "alicloud_instance" "web" {
   image_id             = "${data.alicloud_images.default.images.0.id}"
   internet_charge_type = "PayByBandwidth"
-
-  instance_type_family = "ecs.sn1ne"
+  instance_type  = "ecs.sn1ne"
   system_disk_category = "cloud_efficiency"
   security_groups      = ["${alicloud_security_group.default.id}"]
   instance_name        = "web"

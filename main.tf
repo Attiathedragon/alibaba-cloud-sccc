@@ -6,7 +6,7 @@ provider "alicloud" {
 }
 
 data "alicloud_instance_types" "ecs.g8a.large" {
-  
+  instance_type_family = "ecs.g8a"
 }
 
 #

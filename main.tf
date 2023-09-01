@@ -9,9 +9,9 @@ provider "alicloud" {
 
 }
 
-data "alicloud_instance_types" "c2g4" {
+data "alicloud_instance_types" "ecs.t6-c2m1.large" {
   cpu_core_count = 2
-  memory_size    = 4
+  memory_size    = 1
 }
 
 data "alicloud_images" "default" {

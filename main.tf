@@ -10,7 +10,7 @@ provider "alicloud" {
 }
 
 data "alicloud_instance_types" "default" {
-  instance_type_family = "ecs.sn1ne"
+  instance_type_family = "ecs.t6-c2m1.large"
   }
 
 data "alicloud_images" "default" {

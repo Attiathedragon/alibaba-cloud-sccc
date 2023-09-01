@@ -9,6 +9,7 @@ data "alicloud_instance_types" "ecs.n1.xlarge" {
   cpu_core_count = 2
 }
 
+#
 data "alicloud_images" "default" {
   name_regex  = "^ubuntu"
   most_recent = true

@@ -2,7 +2,7 @@ provider "alicloud" {
   access_key = "ALICLOUD_ACCESS_KEY"
   secret_key = "ALICLOUD_SECRET_KEY"
   region = "ALICLOUD_REGION"
-  skip_region_validation
+  skip_region_validation = true
 }
 
 data "alicloud_instance_types" "c2g4" {

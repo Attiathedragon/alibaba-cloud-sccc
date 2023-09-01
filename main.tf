@@ -21,9 +21,8 @@ data "alicloud_images" "default" {
 
 # Create a web server
 resource "alicloud_instance" "web" {
-  image_id             = "${data.alicloud_images.default.images.0.id}"
-  internet_charge_type = "PayByBandwidth"
-  instance_type  = "ecs.sn1ne"
+  image_id             = data.alicloud_images.default.images.0.id
+  instance_type        = data.alicloud_instance_types.default.instance_types.0.id
   system_disk_category = "cloud_efficiency"
   security_groups      = ["${alicloud_security_group.default.id}"]
   instance_name        = "web"

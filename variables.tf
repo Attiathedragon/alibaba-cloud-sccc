@@ -15,7 +15,7 @@ resource "alicloud_kms_key" "key" {
   status                 = "Enabled"
 }
 
-data "alicloud_zones" "default" {
+data "alicloud_zones" "Beijing Zone A" {
   available_disk_category     = "cloud_efficiency"
   available_resource_creation = "VSwitch"
 }
@@ -29,13 +29,13 @@ resource "alicloud_vpc" "vpc" {
 resource "alicloud_vswitch" "vswitch" {
   vpc_id       = alicloud_vpc.vpc.id
   cidr_block   = "172.16.0.0/24"
-  zone_id      = data.alicloud_zones.default.zones.0.id
+  zone_id      = data.alicloud_zones.Beijing Zone A.zones.0.id
   vswitch_name = var.name
 }
 
 resource "alicloud_instance" "instance" {
   # cn-beijing
-  availability_zone = data.alicloud_zones.default.zones.0.id
+  availability_zone = data.alicloud_zones.Beijing Zone A.zones.0.id
   security_groups   = alicloud_security_group.group.*.id
 
   # series III

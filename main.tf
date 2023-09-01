@@ -21,7 +21,7 @@ output "image_id" {
 
 resource "alicloud_instance" "web" {
   image_id             = data.alicloud_images.default.images.0.id
-  instance_type        = ecs.t6-c2m1
+  instance_type        = "ecs.t6-c2m1"
   system_disk_category = "cloud_efficiency"
   security_groups      = ["${alicloud_security_group.default.id}"]
   instance_name        = "web"

@@ -5,9 +5,8 @@ provider "alicloud" {
   skip_region_validation = true
 }
 
-data "alicloud_instance_types" "c2g4" {
+data "alicloud_instance_types" "ecs.n1.xlarge" {
   cpu_core_count = 2
-  memory_size    = 4
 }
 
 data "alicloud_images" "default" {

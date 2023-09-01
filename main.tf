@@ -9,10 +9,9 @@ provider "alicloud" {
 
 }
 
-data "alicloud_instance_types" "ecs.n1.small" {
-  cpu_core_count = 2
-  memory_size    = 1
-}
+data "alicloud_instance_types" "default" {
+  instance_type_family = "ecs.sn1ne"
+  }
 
 data "alicloud_images" "default" {
   name_regex  = "^ubuntu"
